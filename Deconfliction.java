@@ -420,9 +420,9 @@ public class Deconfliction {
 //    	   }
     	   
     	   
-//    	   if (p1.fCost == p2.fCost && p1.hCost == p2.hCost) {
-//               return p1.tCost - p2.tCost;
-//           }
+    	   if (p1.fCost == p2.fCost && p1.hCost == p2.hCost) {
+               return p1.tCost - p2.tCost;
+           }
     	   if (p1.fCost == p2.fCost) {
     		   return p1.hCost - p2.hCost;
     	   }
@@ -568,16 +568,16 @@ public class Deconfliction {
             		if (ongoingSet.containsKey(generateIndex(neighbour.x, neighbour.y))) {
             			neighbour = ongoingSet.get(generateIndex(neighbour.x, neighbour.y));
             		}
-//            		 if ((currNode.x == i && currNode.y == j)
-//            				|| (currNode.parentNode.x == i && currNode.parentNode.y == j)
-//         	                ||((neighbour.x == currNode.x && currNode.x == currNode.parentNode.x)
-//         	                		&& neighbour.y - currNode.y == currNode.y - currNode.parentNode.y)
-//         	                ||((neighbour.y == currNode.y && currNode.y == currNode.parentNode.y)
-//         	                		&& neighbour.x - currNode.x == currNode.x - currNode.parentNode.x)) {
-//         	                    neighbour.tCost = 0;
-//         	                } else {
-//         	                    neighbour.tCost = 1;
-//         	                }
+            		 if ((currNode.x == i && currNode.y == j)
+            				|| (currNode.parentNode.x == i && currNode.parentNode.y == j)
+         	                ||((neighbour.x == currNode.x && currNode.x == currNode.parentNode.x)
+         	                		&& neighbour.y - currNode.y == currNode.y - currNode.parentNode.y)
+         	                ||((neighbour.y == currNode.y && currNode.y == currNode.parentNode.y)
+         	                		&& neighbour.x - currNode.x == currNode.x - currNode.parentNode.x)) {
+         	                    neighbour.tCost = 0;
+         	                } else {
+         	                    neighbour.tCost = 1;
+         	                }
             		
             		
 //                	Node currParentNode = currNode.parentNode;
@@ -592,8 +592,8 @@ public class Deconfliction {
 //                		neighbour.changeDirection = false;
 //                	}
             		
-                    //int newMovementCostToNeighbour = currNode.gCost + GetDistance(currNode, neighbour) + neighbour.tCost;
-                    int newMovementCostToNeighbour = currNode.gCost + GetDistance(currNode, neighbour);
+                    int newMovementCostToNeighbour = currNode.gCost + GetDistance(currNode, neighbour) + neighbour.tCost;
+                    //int newMovementCostToNeighbour = currNode.gCost + GetDistance(currNode, neighbour);
                     //and if it's lower than the neighbour's cost
                     if (newMovementCostToNeighbour < neighbour.gCost || !openSet.contains(neighbour)) {
                         //we calculate the new costs
